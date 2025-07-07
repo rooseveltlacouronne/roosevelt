@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/rooseveltlacouronne/roosevelt/static/css/main.4f244340.css",
+    "main.js": "/rooseveltlacouronne/roosevelt/static/js/main.b939de96.js",
+    "static/js/453.4bea442b.chunk.js": "/rooseveltlacouronne/roosevelt/static/js/453.4bea442b.chunk.js",
+    "static/media/canva_certification.mp4": "/rooseveltlacouronne/roosevelt/static/media/canva_certification.5562cc708e158b303f22.mp4",
+    "static/media/logo.jpeg": "/rooseveltlacouronne/roosevelt/static/media/logo.d078bd2d52849ee8e513.jpeg",
+    "static/media/about.jpeg": "/rooseveltlacouronne/roosevelt/static/media/about.56673b83ea4660c8ee19.jpeg",
+    "static/media/profile.jpeg": "/rooseveltlacouronne/roosevelt/static/media/profile.b13c143c864581a39e8e.jpeg",
+    "index.html": "/rooseveltlacouronne/roosevelt/index.html",
+    "main.4f244340.css.map": "/rooseveltlacouronne/roosevelt/static/css/main.4f244340.css.map",
+    "main.b939de96.js.map": "/rooseveltlacouronne/roosevelt/static/js/main.b939de96.js.map",
+    "453.4bea442b.chunk.js.map": "/rooseveltlacouronne/roosevelt/static/js/453.4bea442b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4f244340.css",
+    "static/js/main.b939de96.js"
+  ]
+}
