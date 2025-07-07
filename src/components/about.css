@@ -1,0 +1,78 @@
+/* about.css */
+
+/* Bulles flottantes */
+.about-bubbles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.about-bubbles span {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+  animation: floatUp 20s linear infinite;
+}
+
+.about-bubbles span:nth-child(1) {
+  width: 60px;
+  height: 60px;
+  left: 5%;
+  animation-delay: 0s;
+}
+.about-bubbles span:nth-child(2) {
+  width: 30px;
+  height: 30px;
+  left: 20%;
+  animation-delay: 4s;
+}
+.about-bubbles span:nth-child(3) {
+  width: 90px;
+  height: 90px;
+  left: 35%;
+  animation-delay: 2s;
+}
+.about-bubbles span:nth-child(4) {
+  width: 25px;
+  height: 25px;
+  left: 50%;
+  animation-delay: 6s;
+}
+.about-bubbles span:nth-child(5) {
+  width: 70px;
+  height: 70px;
+  left: 65%;
+  animation-delay: 1s;
+}
+.about-bubbles span:nth-child(6) {
+  width: 40px;
+  height: 40px;
+  left: 80%;
+  animation-delay: 3s;
+}
+.about-bubbles span:nth-child(7) {
+  width: 55px;
+  height: 55px;
+  left: 90%;
+  animation-delay: 7s;
+}
+
+@keyframes floatUp {
+  0% {
+    bottom: -100px;
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    bottom: 110%;
+    transform: translateY(-300px) rotate(360deg);
+    opacity: 0;
+  }
+}

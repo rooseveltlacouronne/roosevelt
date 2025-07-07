@@ -1,0 +1,103 @@
+
+/* Gallery.css : Style HD 3D et animations avancées */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a0f1c;
+  overflow-x: hidden;
+}
+
+/* Animation de fond 3D */
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(circle at 20% 20%, rgba(0,255,255,0.1), transparent),
+              radial-gradient(circle at 80% 80%, rgba(255,0,255,0.1), transparent),
+              linear-gradient(135deg, #08182a, #102941);
+  animation: moveBackground 15s infinite linear;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0%, 100% 100%, center;
+  }
+  50% {
+    background-position: 50% 50%, 50% 50%, center;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, center;
+  }
+}
+
+/* Style des cartes */
+.gallery-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  background: linear-gradient(145deg, #0a0f1c, #141f33);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.gallery-card:hover {
+  transform: rotateY(10deg) scale(1.03);
+  box-shadow: 0 30px 60px rgba(0, 255, 255, 0.4);
+}
+
+.gallery-card img,
+.gallery-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  transition: filter 0.3s ease;
+}
+
+.gallery-card:hover img,
+.gallery-card:hover video {
+  filter: brightness(1.1) saturate(1.2);
+}
+
+/* Titre section */
+.gallery-title {
+  font-size: 3.5rem;
+  text-align: center;
+  background: linear-gradient(90deg, #ff00cc, #00ffff);
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(0,255,255,0.3);
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Lightbox custom overlay (si besoin) */
+.awesome-lightbox {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+}
+
+

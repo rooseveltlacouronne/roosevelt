@@ -1,0 +1,185 @@
+/* Navbar.css */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(10, 15, 40, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.15);
+  animation: slideDown 0.8s ease-in-out forwards;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%) rotateX(30deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotateX(0);
+    opacity: 1;
+  }
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffffaa;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.navbar-logo:hover {
+  transform: rotateY(10deg) scale(1.05);
+}
+
+.navbar-logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ffff88;
+  animation: pulseShadow 2s infinite ease-in-out;
+}
+
+@keyframes pulseShadow {
+  0%, 100% {
+    box-shadow: 0 0 10px #00ffff88;
+  }
+  50% {
+    box-shadow: 0 0 20px #00ffffcc;
+  }
+}
+
+.navbar-menu ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar-menu ul li a {
+  position: relative;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  transition: all 0.4s ease;
+}
+
+.navbar-menu ul li a::before,
+.navbar-menu ul li a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, #00ffff, #ff00cc);
+  bottom: 0;
+  transition: width 0.4s ease;
+}
+
+.navbar-menu ul li a::before {
+  left: 0;
+}
+
+.navbar-menu ul li a::after {
+  right: 0;
+}
+
+.navbar-menu ul li a:hover::before,
+.navbar-menu ul li a:hover::after {
+  width: 100%;
+}
+
+.navbar-menu ul li a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffffaa;
+  transform: scale(1.1);
+}
+
+.navbar-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #00ffff;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggle:hover {
+  transform: rotate(180deg) scale(1.2);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  background: linear-gradient(135deg, #080b12, #0f1a2b);
+  box-shadow: -10px 0 30px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 999;
+  animation: fadeInMenu 0.5s ease forwards;
+}
+
+@keyframes fadeInMenu {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style: none;
+}
+
+.mobile-menu ul li a {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffffaa;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .navbar-menu {
+    display: none;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+}

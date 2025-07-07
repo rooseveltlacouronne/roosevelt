@@ -1,0 +1,103 @@
+
+/* Footer.css */
+
+.footer {
+  background: linear-gradient(145deg, #0a0f2c, #1a1f3d);
+  color: #ffffff;
+  padding: 4rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out both;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 50px rgba(0, 255, 255, 0.1);
+}
+
+.footer h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.footer p {
+  max-width: 700px;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-socials a {
+  color: white;
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #00ffff;
+  transform: scale(1.2) rotate(5deg);
+  text-shadow: 0 0 15px #00ffff;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Effet de fond animé */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 60%);
+  animation: pulse 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .footer h2 {
+    font-size: 1.8rem;
+  }
+  .footer p {
+    font-size: 0.95rem;
+  }
+  .footer-socials a {
+    font-size: 1.6rem;
+  }
+}

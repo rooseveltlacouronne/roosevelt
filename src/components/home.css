@@ -1,0 +1,264 @@
+
+/* home.css */
+
+/* Variables couleurs */
+:root {
+  --emerald: #10b981;
+  --emerald-light: #34d399;
+  --blue: #3b82f6;
+  --red: #ef4444;
+  --white: #fff;
+  --black: #000;
+  --glow-color: rgba(16, 185, 129, 0.75);
+}
+
+/* Container général */
+section#home {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5rem 4rem;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #000 100%);
+  color: var(--white);
+  perspective: 1200px;
+}
+
+/* Logo animé (classe animate-float) */
+.animate-float {
+  animation: floatAnim 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px var(--emerald));
+}
+
+@keyframes floatAnim {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+}
+
+/* Titre principal avec glow et animation */
+h1.text-glow {
+  color: transparent;
+  background: linear-gradient(90deg, var(--emerald-light), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow:
+    0 0 8px var(--emerald-light),
+    0 0 12px var(--blue),
+    0 0 24px var(--emerald-light);
+  animation: glowPulse 3.5s ease-in-out infinite alternate;
+  user-select: none;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow:
+      0 0 4px var(--emerald-light),
+      0 0 8px var(--blue),
+      0 0 16px var(--emerald-light);
+  }
+
+  to {
+    text-shadow:
+      0 0 10px var(--emerald-light),
+      0 0 20px var(--blue),
+      0 0 40px var(--emerald-light);
+  }
+}
+
+/* Texte du typewriter */
+.typewriter-container {
+  height: 60px;
+  color: var(--emerald-light);
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
+  user-select: none;
+  letter-spacing: 1.2px;
+}
+
+/* Réseaux sociaux : icônes stylées et animées */
+section#home .text-3xl a {
+  color: var(--white);
+  transition: transform 0.3s ease, color 0.3s ease;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+}
+
+section#home .text-3xl a:hover,
+section#home .text-3xl a:focus {
+  transform: scale(1.25) rotate(8deg);
+  filter: drop-shadow(0 0 10px var(--emerald-light));
+  outline: none;
+}
+
+/* Photo de profil avec ombres et animations 3D */
+section#home img {
+  border-radius: 50%;
+  border: 4px solid var(--white);
+  box-shadow:
+    0 0 10px var(--emerald),
+    0 0 30px var(--blue);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  user-select: none;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+section#home img:hover,
+section#home img:focus {
+  transform: scale(1.1) rotateY(15deg) rotateX(5deg);
+  box-shadow:
+    0 0 20px var(--emerald-light),
+    0 0 50px var(--blue);
+  outline: none;
+  cursor: pointer;
+}
+
+/* Conteneur texte + animation */
+section#home>div:first-child,
+section#home>div:last-child {
+  z-index: 10;
+}
+
+/* Background pulse 3D et effet flou */
+section#home>div:last-child+div {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at center, rgba(16, 185, 129, 0.03), transparent 7000%),
+    linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 60%, #ee0404 100%);
+ filter: blur(40px);
+  animation: pulseBg 60s ease-in-out infinite;
+  pointer-events: none;
+  transform-style: preserve-3d;
+}
+
+@keyframes pulseBg {
+
+  0%,
+  100% {
+    filter: blur(40px) brightness(1);
+  }
+
+  50% {
+    filter: blur(30px) brightness(1.2);
+  }
+}
+
+/* Responsive */
+
+/* Petits écrans mobiles */
+@media (max-width: 480px) {
+  section#home {
+    padding: 1rem 1.5rem;
+    flex-direction: column;
+  }
+
+  /* Bloc texte et bloc image à 100% */
+  section#home > div:first-child,
+  section#home > div:last-child {
+    width: 100%;
+    text-align: center;
+  }
+
+  section#home h1.text-glow {
+    font-size: 2.5rem;
+  }
+
+  /* Photo de profil uniquement */
+  section#home img.profile-photo {
+    width: 180px !important;
+    height: 180px !important;
+    margin: 0 auto;
+  }
+
+  /* Logo uniquement */
+  .logo-responsive {
+    position: static !important;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    width: 180px !important;
+    height: 180px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  section#home .text-3xl {
+    justify-content: center !important;
+  }
+}
+
+
+/* Tablettes */
+@media (min-width: 481px) and (max-width: 768px) {
+  section#home {
+    padding: 2rem 3rem;
+    flex-direction: column;
+  }
+
+  section#home h1.text-glow {
+    font-size: 3.5rem;
+  }
+
+  section#home img {
+    width: 240px !important;
+    height: 240px !important;
+    margin: 0 auto;
+  }
+}
+
+/* Taille du logo réduite sur petit écran */
+@media (max-width: 480px) {
+  .logo-responsive {
+    width: 10px !important;
+    height: 10px !important;
+  }
+}
+
+
+
+
+
+
+.typewriter-text {
+  display: inline-block;
+  color: var(--emerald-light);
+  text-shadow:
+    0 0 4px rgba(16, 185, 129, 0.5),
+    0 0 12px rgba(59, 130, 246, 0.3),
+    0 0 20px rgba(59, 130, 246, 0.2);
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+
+.typewriter-3d:hover .typewriter-text {
+  transform: rotateY(15deg) scale(1.05);
+  text-shadow:
+    0 0 10px var(--emerald-light),
+    0 0 20px var(--blue),
+    0 0 40px var(--emerald);
+}
+
+/* Curseur clignotant */
+.typewriter-cursor {
+  color: var(--emerald-light);
+  font-weight: bold;
+  animation: blink 1s infinite;
+  display: inline-block;
+  margin-left: 4px;
+  transform: translateZ(30px);
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
