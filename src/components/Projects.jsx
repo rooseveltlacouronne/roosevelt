@@ -6,6 +6,8 @@ import trombinoscopeFlutter from "../assets/lotties/trombinoscopeFlutter.json";
 import ecommerceFlutter from "../assets/lotties/ecommerceFlutter.json";
 import securityApp from "../assets/lotties/securityApp.json";
 import sdkOrange from "../assets/lotties/sdkOrange.json";
+import securityAp from "../assets/lotties/imu.json";
+import securityA from "../assets/lotties/mar.json";
 
 const projects = [
   {
@@ -15,6 +17,14 @@ const projects = [
       "Application Web PWA développée avec React illustrant un trombinoscope ultra interactif et professionnel.",
     link: "https://trombinosco.netlify.app/",
     isMobile: false,
+  },
+  {
+    name: "Application Mobile De Simulation De Combat ",
+    animation: securityAp,
+    description:
+      "Application mobile développée sous Flutter, modélisant de manière dynamique les interactions immuno-pathogéniques entre virus, bactéries et anticorps au sein de l’organisme.",
+    apk: "/apks/immuno.apk",
+    isMobile: true,
   },
   {
     name: "Trombinoscope Flutter PWA",
@@ -47,6 +57,14 @@ const projects = [
       "SDK personnel pour l'intégration de transferts Orange Money, publié officiellement sur pub.dev.",
     link: "https://pub.dev/packages/om_sdk",
     isMobile: false,
+  },
+  {
+    name: "Application Mobile De Gestion Des Rations Alimentaires ",
+    animation: securityA,
+    description:
+      "Application mobile conçue sous React, intégrant la numérisation intelligente des carnets culinaires, l’optimisation algorithmique des achats, et l’assistance contextuelle d’une intelligence artificielle pour une orchestration efficiente des processus culinaires. ",
+    apk: "/apks/marcher.apk",
+    isMobile: true,
   },
 ];
 
